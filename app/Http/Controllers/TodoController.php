@@ -20,7 +20,10 @@ class TodoController extends Controller
 
     function createCategory(Request $request)
     {
-        
+        $newCategory        = new Category();
+        $newCategory->name  = $request->category_name;
+        $newCategory->save();
+        return redirect()->action('TodoController@getList');
     }
 
     function createTodo(Request $request)
@@ -36,12 +39,5 @@ class TodoController extends Controller
             return response()->json(array('status' => 1, 'message' => ''));
         }
         else return response()->json(array('status' => 0, 'message' => $result));
-    }
-
-    function getTodoByCategory(Request $request)
-    {
-        $categoryId = $request->category_id;
-        $todos      = Todo::where('category_id', $categoryId)->get();
-        return response()->json($todos);
     }
 }

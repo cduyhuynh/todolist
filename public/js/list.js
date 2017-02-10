@@ -1,9 +1,10 @@
 $(document).ready(function()
 {
+    $('#create-cat-form').hide();
     $('.create-todo').click(function(){
         var parent      = $(this).parent();
-        var title       = $(parent).children('.new-title').val();
-        var desc        = $(parent).children('.new-desc').val();
+        var title       = $(parent).find('.new-title').val();
+        var desc        = $(parent).find('.new-desc').val();
         var category_id = $(parent).children('.cate-id').val();
         $.post("/todo/create",
         {
@@ -21,5 +22,10 @@ $(document).ready(function()
                 location.reload();
             }
         });
-    })
+    });
+
+    $('#create-cat-btn').click(function(){
+        $(this).hide();
+        $('#create-cat-form').show();
+    });
 })

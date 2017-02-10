@@ -1,8 +1,13 @@
 <?php
 return [
-    'category.create'       => 'Create Category',
-
-    'todo.create'           => 'Create Todo',
     'create'                => 'Create',
+    'category' =>[
+        'create'       => 'Create Category',
+    ],
+    'todo' => [
+        'create'            => 'Create Todo',
+        'title'             => 'Title',
+        'desc'              => 'Description',
+    ],
 ];
 ?>
