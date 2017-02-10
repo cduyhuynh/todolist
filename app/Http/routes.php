@@ -12,7 +12,9 @@
 */
 
 Route::get('/', 'TodoController@getList');
-
+Route::post('/todo/create', 'TodoController@createTodo');
+Route::get('/todo/list', 'TodoController@getTodoByCategory');
+Route::post('/category/create', 'TodoController@createCategory');
 /*
 |--------------------------------------------------------------------------
 | Application Routes
